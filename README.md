@@ -7,10 +7,13 @@ It was made using [Jupyter Book](https://jupyterbook.org/) and uses of the code 
 ### Building the Jupyter Book from a virtual environment
 In your terminal, run the following commands.
 ```
-python3 -m venv .venv	
+python3.9 -m venv .venv	
 ```
 ```
 source .venv/bin/activate
+```
+```
+pip install --upgrade pip
 ```
 ```
 pip install -r requirements.txt
