@@ -8,17 +8,14 @@ It was made using [Jupyter Book](https://jupyterbook.org/) and uses of the code 
 In your terminal, run the following commands.
 ``` bash
 python3.9 -m venv .venv	
-```
-``` bash
 source .venv/bin/activate
 ```
 ``` bash
 pip install --upgrade pip
-```
-``` bash
 pip install -r requirements.txt
 ```
 ``` bash
+jupyter-book clean .
 jupyter-book build .
 ```
 To deactivate the virtual environment, simply run:
