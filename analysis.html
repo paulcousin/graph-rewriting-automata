@@ -372,10 +372,10 @@ title="Print to PDF"
 <p>Let us start with one of the minimal 3-regular graphs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gra</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import gra 
 
-<span class="n">g</span> <span class="o">=</span> <span class="n">gra</span><span class="o">.</span><span class="n">minimal_regular_graphs</span><span class="p">(</span><span class="mi">3</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">g</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+g = gra.minimal_regular_graphs(3)[2]
+g.plot()
 </pre></div>
 </div>
 </div>
@@ -388,25 +388,25 @@ title="Print to PDF"
 <p>We can plot the growth of <span class="math notranslate nohighlight">\(G\)</span> under this rule using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import matplotlib.pyplot as plt
 
-<span class="n">rule2236</span> <span class="o">=</span> <span class="n">gra</span><span class="o">.</span><span class="n">Rule</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2236</span><span class="p">)</span>
-<span class="n">time_max</span> <span class="o">=</span> <span class="mi">70</span>
+rule2236 = gra.Rule(3,2236)
+time_max = 70
 
-<span class="c1"># initialize the list that will hold the succesive graph orders with the first value</span>
-<span class="n">growth</span> <span class="o">=</span> <span class="p">[</span><span class="n">g</span><span class="o">.</span><span class="n">order</span><span class="p">()]</span>
+# initialize the list that will hold the succesive graph orders with the first value
+growth = [g.order()]
 
-<span class="c1"># loop that evolves the graph then adds the new graph order to the list</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">time_max</span><span class="p">):</span>
-    <span class="n">rule2236</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
-    <span class="n">growth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">order</span><span class="p">())</span>
+# loop that evolves the graph then adds the new graph order to the list
+for i in range(time_max):
+    rule2236(g)
+    growth.append(g.order())
 
-<span class="c1"># growth plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">growth</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Growth of G0 under rule 2236&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;graph order&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+# growth plot
+plt.plot(growth)
+plt.title(&#39;Growth of G0 under rule 2236&#39;)
+plt.xlabel(&#39;time&#39;)
+plt.ylabel(&#39;graph order&#39;)
+plt.show()
 </pre></div>
 </div>
 </div>
@@ -417,7 +417,7 @@ title="Print to PDF"
 <p>Here is the final graph of the sequence <span class="math notranslate nohighlight">\(G_{70}\)</span> :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>g.plot()
 </pre></div>
 </div>
 </div>

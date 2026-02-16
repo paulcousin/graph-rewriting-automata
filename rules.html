@@ -524,10 +524,10 @@ title="Print to PDF"
 <p>The function <code class="docutils literal notranslate"><span class="pre">minimal_regular_graphs(d)</span></code> computes the list of every d-regular graphs meeting the listed criteria.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gra</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import gra
 
-<span class="n">graphs3</span> <span class="o">=</span> <span class="n">gra</span><span class="o">.</span><span class="n">minimal_regular_graphs</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">graphs4</span> <span class="o">=</span> <span class="n">gra</span><span class="o">.</span><span class="n">minimal_regular_graphs</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+graphs3 = gra.minimal_regular_graphs(3)
+graphs4 = gra.minimal_regular_graphs(4)
 </pre></div>
 </div>
 </div>
@@ -539,7 +539,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphs4</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>graphs4[0].plot()
 </pre></div>
 </div>
 </div>
@@ -552,8 +552,8 @@ title="Print to PDF"
 <p>The <code class="docutils literal notranslate"><span class="pre">Rule</span></code> class must be provided a <strong>degree</strong> and a <strong>rule number</strong>. The <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method can be used to generate a graphical representation of a rule’s action on a graph.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="o">=</span> <span class="n">gra</span><span class="o">.</span><span class="n">Rule</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2238</span><span class="p">)</span>
-<span class="n">rule</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rule = gra.Rule(3,2238)
+rule.plot()
 </pre></div>
 </div>
 </div>
@@ -564,8 +564,8 @@ title="Print to PDF"
 <p>We can now use this rule to evolve one of our 3-regular graphs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span><span class="p">(</span><span class="n">graphs3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">clone</span><span class="p">())</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="c1"># or equivalently: graphs[1].clone().evolve(rule).plot()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rule(graphs3[1].clone()).plot()
+# or equivalently: graphs[1].clone().evolve(rule).plot()
 </pre></div>
 </div>
 </div>
@@ -575,8 +575,8 @@ title="Print to PDF"
 <p>The <code class="docutils literal notranslate"><span class="pre">.jump()</span></code> method can be used to checkout the graph obtained by applying the rule n times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">graphs3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">jump</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span><span class="mi">120</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="c1"># or equivalently: rule.jump(graphs[1].clone(),120).plot()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>graphs3[1].clone().jump(rule,120).plot()
+# or equivalently: rule.jump(graphs[1].clone(),120).plot()
 </pre></div>
 </div>
 </div>
