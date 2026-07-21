@@ -410,6 +410,10 @@ title="Print to PDF"
 </ul>
 </li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to consider only 3-regular graphs like in <span id="id1">[<a class="reference internal" href="references.html#id2" title="Paul Cousin and Aude Maignan. Organic structures emerging from bio-inspired graph-rewriting automata. In 2022 24th International Symposium on Symbolic and Numeric Algorithms for Scientific Computing (SYNASC). 2022. arXiv:2211.13619.">4</a>]</span>, just replace <span class="math notranslate nohighlight">\(d\)</span> by 3 in what follows.</p>
+</div>
 <p>The <strong>rules</strong> that will be considered must:</p>
 <ul class="simple">
 <li><p>keep these properties invariant,</p></li>
@@ -427,12 +431,9 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
-&amp; R: [[0,7]]\rightarrow\{0,\, 1\} \\  
-&amp; R(c(v_t))=s(v_{t+1}) 
-\end{aligned}\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-&amp; R': [[0,7]]\rightarrow\{0,\, 1\} \\  
+&amp; R: \{0,1,\dots,2d+1\}\rightarrow\{0,\, 1\} \\  
+&amp; R(c(v_t))=s(v_{t+1})  \\  \\ 
+&amp; R': \{0,1,\dots,2d+1\}\rightarrow\{0,\, 1\} \\  
 &amp; R'(c(v_t))=\begin{cases}\begin{array}{ll}
         1, &amp; \text{if c leads to a division at t+1}\\
         0, &amp; \text{otherwise}
@@ -440,10 +441,10 @@ title="Print to PDF"
 \end{aligned}\end{split}\]</div>
 <p>Every d-regular rule can thus be labeled by a unique <strong>rule number</strong> <span class="math notranslate nohighlight">\(n\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[n=\sum_{i=0}^7 \left[ 2^i R(i) +  2^{i+2(d+1)} R'(i) \right]\]</div>
+\[n=\sum_{i=0}^{2d+1} \left[ 2^i R(i) +  2^{i+2(d+1)} R'(i) \right]\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This labeling system, inspired by the Wolfram code <span id="id1">[<a class="reference internal" href="references.html#id16" title="Stephen Wolfram. A New Kind of Science. Wolfram Media, 2002. ISBN 1579550088.">5</a>]</span>, is such that a rule number in its binary form displays the behavior of the rule. Starting from the right, the <span class="math notranslate nohighlight">\(2(d+1)\)</span> first digits indicate the future state for each configuration as they have been ordered previously. The <span class="math notranslate nohighlight">\(2(d+1)\)</span> following digits show when a division occurs.</p>
+<p>This labeling system, inspired by the Wolfram code <span id="id2">[<a class="reference internal" href="references.html#id16" title="Stephen Wolfram. A New Kind of Science. Wolfram Media, 2002. ISBN 1579550088.">5</a>]</span>, is such that a rule number in its binary form displays the behavior of the rule. Starting from the right, the <span class="math notranslate nohighlight">\(2(d+1)\)</span> first digits indicate the future state for each configuration as they have been ordered previously. The <span class="math notranslate nohighlight">\(2(d+1)\)</span> following digits show when a division occurs.</p>
 </div>
 </section>
 <section id="implementation">
